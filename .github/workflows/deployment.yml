@@ -10,21 +10,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4 
+      - name: Checkout repository
+        uses: actions/checkout@v4 
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v4 #il sert a creer notre config pour github pages
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }} #les workflow permissions qu’on a activé
-        publish_dir: ./src #fichiers qu’on va publier sur le serveur
-    - name: Install necessary packages
-      run: npm install
- 
-    - name: Run Lighthouse CI
-      uses: treosh/lighthouse-ci-action@v11
-      with:
-        url: "https://lucashimpens.io/jftl-lighthouse-workshop/"
-        configPath: './lighthouserc.js'
-        temporaryPublicStorage: true # upload lighthouse report to the temporary storage
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4 #il sert a creer notre config pour github pages
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }} #les workflow permissions qu’on a activé
+          publish_dir: ./src #fichiers qu’on va publier sur le serveur
 
+      - name: Install necessary packages
+        run: npm install
+
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          url: "https://lucashimpens.io/jftl-lighthouse-workshop/"
+          configPath: './lighthouserc.js'
+          temporaryPublicStorage: true # upload lighthouse report to the temporary storage
