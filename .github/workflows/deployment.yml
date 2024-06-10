@@ -1,0 +1,20 @@
+name: Deploy to GitHub Pages #nom de notre process
+
+on:
+  push:
+    branches:
+      - main  #des que cette branche recoit un “push” la CI/CD tournera son job
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4 
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4 #il sert a creer notre config pour github pages
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }} #les workflow permissions qu’on a activé
+        publish_dir: ./src #fichiers qu’on va publier sur le serveur
