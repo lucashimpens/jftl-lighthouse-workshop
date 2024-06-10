@@ -18,3 +18,14 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }} #les workflow permissions qu’on a activé
         publish_dir: ./src #fichiers qu’on va publier sur le serveur
+    - name: Install necessary packages
+      run: npm install
+ 
+    - name: Run Lighthouse CI
+          uses: treosh/lighthouse-ci-action@v11
+          with:
+            urls: |
+              https://lucashimpens.io/jftl-lighthouse-workshop/
+            configPath: './lighthouserc.js'
+            temporaryPublicStorage: true # upload lighthouse report to the temporary storage
+
