@@ -1,14 +1,69 @@
 <!DOCTYPE html>
-<!-- something important is missing in the html tag.... what is it? -->
-<html lang="en"> 
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>CollectiFlex</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello World</h1>
-    <script src="app.js"></script>
+    <header>
+        <div class="logo">Logo</div>
+        <nav>
+            <a href="#">Collections</a>
+            <a href="#">Mes Collections</a>
+            <a href="#">Mon Compte</a>
+            <a href="#">Se Connecter</a>
+            <div class="lang">
+                <a href="#">FR</a> | <a href="#">EN</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="search">
+            <input type="text" placeholder="Recherche une collection...">
+        </section>
+
+        <h1>Bienvenue sur CollectiFlex</h1>
+
+        <section class="categories">
+            <button>Musique</button>
+            <button>Automobile</button>
+            <button>Autres</button>
+        </section>
+
+        <section class="collections">
+            <div class="collection">
+                <h2>Collection #1</h2>
+                <p>Voitures</p>
+                <p>Par Michel</p>
+            </div>
+            <div class="collection">
+                <h2>Collection #2</h2>
+                <p>Musiques</p>
+                <p>Par Jean-Paul</p>
+            </div>
+            <div class="collection">
+                <h2>Collection #3</h2>
+                <p>Timbres</p>
+                <p>Par Franck</p>
+            </div>
+        </section>
+
+        <section class="review">
+            <h2>Laisser un avis</h2>
+            <textarea placeholder="Rédigez un avis..."></textarea>
+            <div class="stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+            </div>
+            <button>Envoyer</button>
+        </section>
+    </main>
+
+    <footer>
+        <a href="#">Mentions Légales</a>
+        <a href="#">Plan du site</a>
+    </footer>
 </body>
 </html>
